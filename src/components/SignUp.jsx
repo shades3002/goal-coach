@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import { firebaseApp } from '../firebase';
 
 class SingUp extends Component {
@@ -38,7 +39,7 @@ class SingUp extends Component {
                     />
                     <input 
                         className="form-control"
-                        type="text"
+                        type="password"
                         style={{marginRight: '5px'}}
                         placeholder="password"
                         onChange={event => this.setState({password: event.target.value})}
@@ -48,10 +49,11 @@ class SingUp extends Component {
                         type="button"
                         onClick={() => this.SingUp()}
                     >
-                        Sign Up
+                        Sign In
                     </button>
                 </div>
                 <div>{this.state.error.message}</div>
+                <div><Link to={'/signin'}>Already a user? Sign in instead</Link></div>
             </div>
         )
     }
